@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Zero Waste</title>
+    <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+        <div class="flex items-center gap-2">
+            <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-8 h-8">
+            <h1 class="text-xl font-semibold">Zero Waste</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Hi, User!</span>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen bg-white border-r">
+            <nav class="p-4">
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">ACCOUNT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-home"></i>
+                            <a href="/frontend/dashboard.html">Home</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user"></i>
+                            <a href="/frontend/profile.html">Profile</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-heart"></i>
+                            <a href="/frontend/volunteer.html">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">MAIN</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/community.html">Community</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/report_waste.html">Waste Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/reward_system.html">Reward</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">SUPPORT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-flag"></i>
+                            <a href="/frontend/report_issue.html">Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-circle-question"></i>
+                            <a href="/frontend/help.html">Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-2xl font-semibold mb-6">Leaderboard</h2>
+
+            <!-- Top Contributors Section -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Top Contributors</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="px-4 py-2 text-left">Rank</th>
+                                <th class="px-4 py-2 text-left">User</th>
+                                <th class="px-4 py-2 text-left">Contributions</th>
+                                <th class="px-4 py-2 text-left">EcoTokens</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2">1</td>
+                                <td class="px-4 py-2 flex items-center gap-2">
+                                    <img src="/frontend/leaderb1.png" alt="User Avatar" class="w-auto h-8 rounded-full">
+                                    <span>EcoWarrior123</span>
+                                </td>
+                                <td class="px-4 py-2">152</td>
+                                <td class="px-4 py-2">3,750</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-4 py-2">2</td>
+                                <td class="px-4 py-2 flex items-center gap-2">
+                                    <img src="/frontend/leaderb2.png" alt="User Avatar" class="w-auto h-8 rounded-full">
+                                    <span>GreenHero</span>
+                                </td>
+                                <td class="px-4 py-2">138</td>
+                                <td class="px-4 py-2">3,420</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2">3</td>
+                                <td class="px-4 py-2 flex items-center gap-2">
+                                    <img src="/frontend/leaderb3.png" alt="User Avatar" class="w-auto h-8 rounded-full">
+                                    <span>EarthGuardian</span>
+                                </td>
+                                <td class="px-4 py-2">125</td>
+                                <td class="px-4 py-2">3,100</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Recent Achievements</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border rounded-lg p-4 flex items-center gap-4">
+                        <img src="/frontend/lm1.jpg" alt="Achievement Badge" class="w-16 h-16">
+                        <div>
+                            <h4 class="font-semibold">Waste Warrior</h4>
+                            <p class="text-sm text-gray-600">Collected 100kg of waste</p>
+                            <p class="text-sm text-green-600">Earned by: EcoWarrior123</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg p-4 flex items-center gap-4">
+                        <img src="/frontend/lm2.jpg" alt="Achievement Badge" class="w-16 h-16">
+                        <div>
+                            <h4 class="font-semibold">Community Leader</h4>
+                            <p class="text-sm text-gray-600">Organized 10 clean-up events</p>
+                            <p class="text-sm text-green-600">Earned by: GreenHero</p>
+                        </div>
+                    </div>
+                    <div class="border rounded-lg p-4 flex items-center gap-4">
+                        <img src="lm3.jpg" alt="Achievement Badge" class="w-16 h-16">
+                        <div>
+                            <h4 class="font-semibold">Eco Innovator</h4>
+                            <p class="text-sm text-gray-600">Proposed 5 sustainable solutions</p>
+                            <p class="text-sm text-green-600">Earned by: EarthGuardian</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

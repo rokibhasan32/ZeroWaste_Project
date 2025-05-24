@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion Forum - ZeroWaste Platform</title>
+    <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+        <div class="flex items-center gap-2">
+            <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-8 h-8" />
+            <h1 class="text-xl font-semibold">ZeroWaste</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Hi,User!</span>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen bg-white border-r">
+            <nav class="p-4">
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">ACCOUNT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-home"></i>
+                            <a href="/frontend/dashboard.html">Home</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user"></i>
+                            <a href="/frontend/profile.html">Profile</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-heart"></i>
+                            <a href="/frontend/volunteer.html">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">MAIN</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/community.html">Community</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/report_waste.html">Waste Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/reward_system.html">Reward</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">SUPPORT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-flag"></i>
+                            <a href="/frontend/report_issue.html">Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-circle-question"></i>
+                            <a href="/frontend/help.html">Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-2xl font-semibold mb-6">Discussion Forum</h2>
+
+            <!-- Create New Topic -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Start a New Discussion</h3>
+                <form id="discussionForm" class="space-y-4">
+                    <div>
+                        <label for="topic-title" class="block mb-1 font-medium">Topic Title</label>
+                        <input type="text" id="topic-title" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Enter your topic title" required />
+                    </div>
+                    <div>
+                        <label for="topic-category" class="block mb-1 font-medium">Category</label>
+                        <select id="topic-category" class="w-full px-3 py-2 border rounded-md">
+                            <option>Waste Management</option>
+                            <option>Sustainable Living</option>
+                            <option>Clean-up Events</option>
+                            <option>Eco-friendly Products</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="topic-content" class="block mb-1 font-medium">Content</label>
+                        <textarea id="topic-content" rows="4" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Write your discussion topic here..." required></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Post
+                        Topic</button>
+                </form>
+            </section>
+
+            <!-- Recent Discussions -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Recent Discussions</h3>
+                <div id="discussionList" class="space-y-4">
+                    <!-- Discussions will appear here -->
+                </div>
+                <button id="viewAllBtn" class="mt-6 text-green-600 hover:underline">View All Discussions</button>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const discussionForm = document.getElementById('discussionForm');
+        const discussionList = document.getElementById('discussionList');
+        const viewAllBtn = document.getElementById('viewAllBtn');
+
+        const discussions = [
+            {
+                title: 'Tips for reducing plastic waste at home',
+                category: 'Sustainable Living',
+                content: "I've been trying to reduce my plastic waste at home. Here are some tips that worked for me...",
+                author: 'EcoWarrior123',
+                avatar: '/frontend/lm1.jpg',
+                time: '2 hours ago',
+                comments: 15
+            },
+            {
+                title: 'Organizing a beach clean-up event',
+                category: 'Clean-up Events',
+                content: 'I\'m planning to organize a beach clean-up event next month. Any advice on how to get started?',
+                author: 'BeachLover',
+                avatar: '/frontend/communities2.jpg',
+                time: '1 day ago',
+                comments: 32
+            },
+            {
+                title: 'Review: Eco-friendly water bottle',
+                category: 'Eco-friendly Products',
+                content: 'I recently purchased a new eco-friendly water bottle. Here\'s my honest review after using it for a month...',
+                author: 'GreenGadgetGuru',
+                avatar: '/frontend/bottle.jpg',
+                time: '3 days ago',
+                comments: 8
+            }
+        ];
+
+        let showingAll = false;
+
+        function renderDiscussions() {
+            discussionList.innerHTML = '';
+
+            const itemsToShow = showingAll ? discussions : discussions.slice(-3);
+
+            itemsToShow.reverse().forEach(discussion => {
+                const discussionEl = document.createElement('div');
+                discussionEl.className = 'border-b pb-4';
+                discussionEl.innerHTML = `
+          <div class="flex justify-between items-start mb-2">
+            <h4 class="font-semibold text-lg">${discussion.title}</h4>
+            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">${discussion.category}</span>
+          </div>
+          <p class="text-gray-600 mb-2">${discussion.content}</p>
+          <div class="flex items-center text-sm text-gray-500">
+            <img src="${discussion.avatar}" alt="User Avatar" class="w-6 h-6 rounded-full mr-2">
+            <span>Posted by ${discussion.author}</span>
+            <span class="mx-2">•</span>
+            <span>${discussion.time}</span>
+            <span class="mx-2">•</span>
+            <span>${discussion.comments} comments</span>
+          </div>
+        `;
+                discussionList.appendChild(discussionEl);
+            });
+        }
+
+        discussionForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const title = document.getElementById('topic-title').value;
+            const category = document.getElementById('topic-category').value;
+            const content = document.getElementById('topic-content').value;
+
+            discussions.push({
+                title,
+                category,
+                content,
+                author: 'You',
+                avatar: 'https://i.pravatar.cc/100?u=' + Date.now(), // Random avatar
+                time: 'Just now',
+                comments: 0
+            });
+
+            discussionForm.reset();
+            renderDiscussions();
+        });
+
+        viewAllBtn.addEventListener('click', function () {
+            showingAll = !showingAll;
+            renderDiscussions();
+            viewAllBtn.textContent = showingAll ? 'Show Less' : 'View All Discussions';
+        });
+
+        renderDiscussions();
+    </script>
+</body>
+
+</html>

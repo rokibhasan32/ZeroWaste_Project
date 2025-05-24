@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards System - ZeroWaste Platform</title>
+    <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+        <div class="flex items-center gap-2">
+            <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-8 h-8">
+            <h1 class="text-xl font-semibold">ZeroWaste</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Hi, User!</span>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen bg-white border-r">
+            <nav class="p-4">
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">ACCOUNT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-home"></i>
+                            <a href="/frontend/dashboard.html">Home</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user"></i>
+                            <a href="/frontend/profile.html">Profile</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-heart"></i>
+                            <a href="/frontend/volunteer.html">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">MAIN</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/community.html">Community</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/report_waste.html">Waste Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/reward_system.html">Reward</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">SUPPORT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-flag"></i>
+                            <a href="/frontend/report_issue.html">Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-circle-question"></i>
+                            <a href="/frontend/help.html">Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-2xl font-semibold mb-6">Rewards System</h2>
+
+            <!-- EcoTokens Section -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Your EcoTokens</h3>
+                <div class="flex items-center gap-4">
+                    <div class="text-4xl font-bold text-green-600">1250</div>
+                    <div class="text-gray-600">EcoTokens Available</div>
+                </div>
+                <div class="mt-4">
+                    <h4 class="font-semibold mb-2">Recent Activities:</h4>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>Participated in beach cleanup</span>
+                            <span class="text-green-600">+100 EcoTokens</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Reported plastic waste</span>
+                            <span class="text-green-600">+50 EcoTokens</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Completed monthly challenge</span>
+                            <span class="text-green-600">+200 EcoTokens</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Redeem Section -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Redeem EcoTokens</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border rounded-lg p-4">
+                        <img src="/frontend/bottle.jpg" alt="Eco-friendly Product"
+                            class="w-full h-40 object-cover rounded-lg mb-4">
+                        <h4 class="font-semibold mb-2">Reusable Water Bottle</h4>
+                        <p class="text-gray-600 mb-4">500 EcoTokens</p>
+                        <button
+                            class="redeem-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full">Redeem</button>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <img src="/frontend/ghouse.png" alt="Eco-friendly Product"
+                            class="w-full h-40 object-cover rounded-lg mb-4">
+                        <h4 class="font-semibold mb-2">10% Off at Green Store</h4>
+                        <p class="text-gray-600 mb-4">750 EcoTokens</p>
+                        <button
+                            class="redeem-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full">Redeem</button>
+                    </div>
+                    <div class="border rounded-lg p-4">
+                        <img src="/frontend/mt.jpg" alt="Eco-friendly Product"
+                            class="w-full h-40 object-cover rounded-lg mb-4">
+                        <h4 class="font-semibold mb-2">Plant a Tree</h4>
+                        <p class="text-gray-600 mb-4">1000 EcoTokens</p>
+                        <button
+                            class="redeem-btn bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full">Redeem</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Section -->
+            <section id="cartSection" class="hidden mt-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Your Cart</h3>
+                <ul id="cartItems" class="space-y-4"></ul>
+                <button id="buyButton" class="mt-4 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Buy
+                    Items</button>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let ecoTokens = 1250;
+        const tokenDisplay = document.querySelector('.text-4xl');
+        const cartSection = document.getElementById('cartSection');
+        const cartItemsContainer = document.getElementById('cartItems');
+        const buyButton = document.getElementById('buyButton');
+        let cart = [];
+
+        const products = [
+            { name: "Reusable Water Bottle", cost: 500, image: "/frontend/bottle.jpg" },
+            { name: "10% Off at Green Store", cost: 750, image: "/frontend/ghouse.png" },
+            { name: "Plant a Tree", cost: 1000, image: "/frontend/mt.jpg" },
+        ];
+
+        document.querySelectorAll(".redeem-btn").forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                const product = products[index];
+                if (ecoTokens >= product.cost) {
+                    cart.push(product);
+                    cartSection.classList.remove("hidden");
+                    renderCart();
+                } else {
+                    alert("You don't have enough EcoTokens for this reward.");
+                }
+            });
+        });
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach((item, idx) => {
+                const li = document.createElement('li');
+                li.className = "flex items-center justify-between p-4 bg-gray-100 rounded-lg";
+                li.innerHTML = `
+                    <div>
+                        <p class="font-semibold">${item.name}</p>
+                        <p class="text-sm text-gray-600">${item.cost} EcoTokens</p>
+                    </div>
+                    <button onclick="removeFromCart(${idx})" class="text-red-500 hover:underline">Remove</button>
+                `;
+                cartItemsContainer.appendChild(li);
+            });
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            if (cart.length === 0) cartSection.classList.add("hidden");
+            renderCart();
+        }
+
+        buyButton.addEventListener("click", () => {
+            const totalCost = cart.reduce((sum, item) => sum + item.cost, 0);
+            if (ecoTokens >= totalCost) {
+                ecoTokens -= totalCost;
+                tokenDisplay.textContent = ecoTokens;
+                cart = [];
+                cartSection.classList.add("hidden");
+                showThankYou();
+            } else {
+                alert("Not enough tokens to complete the purchase.");
+            }
+        });
+
+        function showThankYou() {
+            const main = document.querySelector("main");
+            main.innerHTML = `
+        <div class="text-center p-8">
+            <img src="/frontend/thank.jpg" alt="Thank You" class="mx-auto mb-6 w-48 h-48 object-contain">
+            <h2 class="text-3xl font-bold text-green-600 mb-4">Thank You!</h2>
+            <p class="text-lg text-gray-700 mb-6">Your support makes the planet greener 🌱</p>
+            <button onclick="location.reload()" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+                Back to Rewards
+            </button>
+        </div>
+    `;
+        }
+
+    </script>
+</body>
+
+</html>

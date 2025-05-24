@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZeroWaste - Community-Led Environmental Action Network</title>
+  <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm fixed w-full z-10">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-auto h-16" />
+        <h1 class="text-2xl font-bold text-green-600">ZeroWaste</h1>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#features" class="text-gray-600 hover:text-green-600 transition duration-300">Features</a>
+        <a href="#how-it-works" class="text-gray-600 hover:text-green-600 transition duration-300">How It Works</a>
+        <a href="#impact" class="text-gray-600 hover:text-green-600 transition duration-300">Our Impact</a>
+        <a href="#join" class="text-gray-600 hover:text-green-600 transition duration-300">Join Us</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="/frontend/login.html" class="text-green-600 hover:text-green-700 transition duration-300">Log In</a>
+        <a href="/frontend/signup.html"
+          class="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition duration-300">Sign Up</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-20 bg-gradient-to-br from-green-500 to-green-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Join the Movement for a Cleaner Environment</h2>
+          <p class="text-xl mb-8 opacity-90">ZeroWaste empowers communities to take action against waste and pollution.
+            Report, volunteer, and make a difference today.</p>
+          <a href="#login"
+            class="bg-white text-green-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 inline-block">Get
+            Started</a>
+        </div>
+        <div class="md:w-1/2">
+          <img src="/frontend/bgL.png" alt="Clean Environment" class="rounded-lg shadow-2xl" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-green-600">What You Can Do with ZeroWaste</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-map-marker-alt text-green-600 text-3xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Report Waste</h3>
+          <p class="text-gray-600">Easily report illegal dumps and pollution in your community.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-hands-helping text-green-600 text-3xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Volunteer Locally</h3>
+          <p class="text-gray-600">Join or organize clean-up events and sustainability drives.</p>
+        </div>
+        <div class="bg-white rounded-lg p-6 shadow hover:shadow-lg transition">
+          <i class="fas fa-chart-line text-green-600 text-3xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Track Impact</h3>
+          <p class="text-gray-600">See how your efforts contribute to a greener planet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-20">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-green-600">How It Works</h2>
+      <div class="flex flex-col md:flex-row justify-around items-start gap-10 text-left">
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold mb-2">1. Sign Up</h3>
+          <p class="text-gray-600">Create an account to access all features.</p>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold mb-2">2. Take Action</h3>
+          <p class="text-gray-600">Report issues, join events, or start your own campaigns.</p>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-xl font-semibold mb-2">3. Earn Rewards</h3>
+          <p class="text-gray-600">Gain recognition and earn badges for your contributions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section id="impact" class="py-20 bg-green-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-12 text-green-600">Our Collective Impact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-4xl font-bold text-green-700">1,200+</h3>
+          <p class="text-gray-600 mt-2">Pollution Reports</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-bold text-green-700">500+</h3>
+          <p class="text-gray-600 mt-2">Volunteers Engaged</p>
+        </div>
+        <div>
+          <h3 class="text-4xl font-bold text-green-700">100+</h3>
+          <p class="text-gray-600 mt-2">Successful Clean-ups</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Join Us Section -->
+  <section id="join" class="py-20 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-green-600">Ready to Make a Difference?</h2>
+      <p class="text-lg text-gray-700 mb-8">Join thousands of people around the world creating a cleaner tomorrow.</p>
+      <a href="/frontend/signup.html"
+        class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition duration-300">Join the
+        Movement</a>
+    </div>
+  </section>
+
+  <!-- Login Section -->
+  <section id="login" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Welcome Back!</h2>
+      <p class="text-lg text-gray-700 mb-8">Log in to your ZeroWaste account and continue making an impact.</p>
+      <a href="/frontend/login.html"
+        class="bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition duration-300">Go to Login
+        Page</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white mt-8 py-10">
+    <div class="container mx-auto px-4">?:;0
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">ZeroWaste</h3>
+          <p class="text-gray-400">Community-Led Environmental Action Network</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i
+                class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i
+                class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i
+                class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+          <form class="flex">
+            <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-full w-full" />
+            <button type="submit"
+              class="bg-green-600 text-white px-4 py-2 rounded-r-full hover:bg-green-700 transition duration-300">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p class="text-gray-400">&copy; 2024 ZeroWaste. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

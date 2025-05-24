@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Zero Waste</title>
+  <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithPopup,
+      signInWithEmailAndPassword
+    } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+    import {
+      getFirestore,
+      doc,
+      getDoc,
+      setDoc
+    } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCW6oNwPdeZ5FwZWOK5Ic6QP9ZrWoC-NoA",
+      authDomain: "prefab-dispatch-441104-t3.firebaseapp.com",
+      projectId: "prefab-dispatch-441104-t3",
+      storageBucket: "prefab-dispatch-441104-t3.appspot.com",
+      messagingSenderId: "932310092085",
+      appId: "1:932310092085:web:105da1a76eea240d02e47c",
+      measurementId: "G-GPHBX344GH"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const provider = new GoogleAuthProvider();
+
+    // Email/Password Login
+    window.handleLogin = async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        console.log("Login successful:", userCredential.user);
+        window.location.href = "/frontend/dashboard.html";
+      } catch (error) {
+        console.error("Login Error:", error.message);
+        alert("Login failed: " + error.message);
+      }
+    };
+
+    // Google Login with Firestore Check
+    window.googleLogin = async () => {
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+
+        if (!userSnap.exists()) {
+          // Save new Google user to Firestore
+          await setDoc(userRef, {
+            name: user.displayName || "",
+            email: user.email,
+            mobile: "",
+            uid: user.uid,
+            createdAt: new Date().toISOString(),
+            bio: "",
+            location: "",
+            interests: [],
+            contributions: 0,
+            ecoTokens: 0,
+            achievements: 0,
+            badges: []
+          });
+        }
+
+        window.location.href = "/frontend/dashboard.html";
+      } catch (error) {
+        console.error("Google Sign-In Error:", error.message);
+        alert("Authentication failed. Please try again.");
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+      <div class="text-center mb-8">
+        <img src="/frontend/logo.png" alt="Zero Waste Logo" class="w-16 h-16 mx-auto mb-4" />
+        <h1 class="text-2xl font-bold text-green-600">Zero Waste</h1>
+        <p class="text-gray-600">Login to your account</p>
+      </div>
+
+      <form onsubmit="handleLogin(event)">
+        <div class="mb-6">
+          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+          <input type="email" id="email" name="email"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            required />
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
+          <input type="password" id="password" name="password"
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+            required />
+        </div>
+        <button type="submit"
+          class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">Login</button>
+      </form>
+
+      <div class="mt-6 text-center">
+        <p class="text-gray-600">Don't have an account? <a href="/frontend/signup.html"
+            class="text-green-600 hover:underline">Sign up</a></p>
+      </div>
+
+      <div class="mt-6">
+        <div class="relative">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-300"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-2 bg-white text-gray-500">Or continue with</span>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-1 gap-3">
+          <button onclick="googleLogin()" type="button"
+            class="flex items-center justify-center py-2 px-4 border border-gray-300 rounded-md hover:bg-gray-50 transition duration-300">
+            <i class="fab fa-google text-red-600 mr-2"></i> Login with Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="absolute bottom-0 w-full bg-gray-800 text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm">&copy; 2024 Zero Waste. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

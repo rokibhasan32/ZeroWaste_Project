@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZeroWaste</title>
+    <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .scrolling-wrapper {
+            overflow-x: auto;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .scrolling-wrapper .card {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+        <div class="flex items-center gap-2">
+            <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-8 h-8" />
+            <h1 class="text-xl font-semibold">ZeroWaste</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Hi, User!</span>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen bg-white border-r">
+            <nav class="p-4">
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">ACCOUNT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-home"></i><a href="/frontend/leaderboard.html">Leaderboard</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user"></i><a href="/frontend/profile.html">Profile</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-heart"></i><a href="/frontend/volunteer.html">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">MAIN</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i><a href="/frontend/community.html">Community</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i><a href="/frontend/report_waste.html">Waste Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i><a href="/frontend/reward_system.html">Reward</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">SUPPORT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-flag"></i>
+                            <a href="/frontend/reporting.html">Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-circle-question"></i>
+                            <a href="/frontend/help.html">Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Ongoing Events -->
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Ongoing Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard1.png" alt="Event 1" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">20-NOV-2024</div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard2.png.jpg" alt="Event 2" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">05-DEC-2024</div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard3.jpg" alt="Event 3" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">15-JAN-2025</div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard3.jpg" alt="Event 3" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">15-JAN-2025</div>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold mb-6">Ongoing Events</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard1.png" alt="Event 1" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">20-NOV-2024</div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard2.png.jpg" alt="Event 2" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">05-DEC-2024</div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden">
+                        <img src="/frontend/dashboard3.jpg" alt="Event 3" class="w-full h-[200px] object-cover" />
+                        <div class="absolute bottom-4 right-4 bg-white px-4 py-2 rounded-lg text-sm">15-JAN-2025</div>
+                    </div>
+                </div>
+            </section>
+
+            <!tems-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl font-semibold">Found Waste Report?</h2>
+                    <p class="text-gray-600">Reporting waste bla bla bla</p>
+                </div>
+                <a href="report.html" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">
+                    REPORT WASTE
+                </a>
+    </div>
+    </section>
+
+    <!-- Our Communities ---- Waste Report -->
+    <section class="mb-12">
+        <div class="flex i>
+            <section class=" mb-12">
+            <h2 class="text-2xl font-semibold mb-6">Our Communities</h2>
+            <div class="scrolling-wrapper">
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/communities1.png" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/communities2.jpg" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/communities3.jpg" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/coummnities4.jpg" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/communities5.jpg" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+                <div class="card rounded-xl overflow-hidden">
+                    <img src="/frontend/communities6.jpg" alt="Community" class="w-64 h-72 object-cover" />
+                </div>
+            </div>
+    </section>
+
+    </main>
+
+    <!-- News Archive Sidebar -->
+    <aside class="w-80 p-6 border-l">
+        <h2 class="text-2xl font-semibold mb-6">News Archive</h2>
+        <div id="newsContainer" class="space-y-6">
+            <div class="rounded-xl overflow-hidden bg-white shadow">
+                <img src="/frontend/communities7.jpg" alt="News" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                    <h3 class="font-semibold mb-2">Recycle Games</h3>
+                    <p class="text-sm text-gray-600 mb-2">Let's reduce plastic waste using games and.....</p>
+                    <button onclick="showMoreNews()" class="text-green-500 text-sm">View More</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+    </div>
+
+    <script>
+        function showMoreNews() {
+            const container = document.getElementById("newsContainer");
+            const extraNews = `
+        <div class="rounded-xl overflow-hidden bg-white shadow">
+          <img src="/frontend/communities3.jpg" alt="News" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold mb-2">Plastic Ban Campaign</h3>
+            <p class="text-sm text-gray-600 mb-2">Awareness program on plastic ban in schools.</p>
+          </div>
+        </div>
+        <div class="rounded-xl overflow-hidden bg-white shadow">
+          <img src="/frontend/communities6.jpg" alt="News" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="font-semibold mb-2">Clean City Drive</h3>
+            <p class="text-sm text-gray-600 mb-2">Volunteers joined forces to clean up city streets.</p>
+          </div>
+        </div>`;
+            container.insertAdjacentHTML("beforeend", extraNews);
+            event.target.remove(); // Remove the button after loading
+        }
+    </script>
+</body>
+
+</html>

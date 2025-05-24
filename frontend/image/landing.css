@@ -1,0 +1,8 @@
+.how_it_works{
+    margin-top: 20px;
+    text-align: center;
+}
+.hiw{
+    display: flex;
+    flex-direction: row;
+}

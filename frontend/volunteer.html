@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Coordination - ZeroWaste Platform</title>
+    <link rel="shortcut icon" href="/frontend/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-4 py-2 bg-white border-b">
+        <div class="flex items-center gap-2">
+            <img src="/frontend/logo.png" alt="ZeroWaste Logo" class="w-8 h-8">
+            <h1 class="text-xl font-semibold">ZeroWaste</h1>
+        </div>
+        <div class="flex items-center gap-4">
+            <span>Hi, User!</span>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 min-h-screen bg-white border-r">
+            <nav class="p-4">
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">ACCOUNT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-home"></i>
+                            <a href="/frontend/dashboard.html">Home</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-user"></i>
+                            <a href="/frontend/profile.html">Profile</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-heart"></i>
+                            <a href="/frontend/volunteer.html">Volunteer</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">MAIN</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/community.html">Community</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/reporting.html">Waste Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-users"></i>
+                            <a href="/frontend/reward_system.html">Reward</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-semibold text-gray-500 mb-2">SUPPORT</h2>
+                    <ul class="space-y-2">
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-flag"></i>
+                            <a href="/frontend/report_issue.html">Report</a>
+                        </li>
+                        <li class="flex items-center gap-3 px-3 py-2 hover:bg-gray-100 rounded-lg">
+                            <i class="fas fa-circle-question"></i>
+                            <a href="/frontend/help.html">Help</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <h2 class="text-2xl font-semibold mb-6">Volunteer Coordination</h2>
+
+            <!-- Volunteer Signup Section -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Volunteer Signup</h3>
+                <form id="volunteerForm" class="space-y-4">
+                    <div>
+                        <label for="name" class="block mb-1 font-medium">Full Name</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Enter your full name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-1 font-medium">Email Address</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Enter your email address" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block mb-1 font-medium">Phone Number</label>
+                        <input type="tel" id="phone" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Enter your phone number" required>
+                    </div>
+                    <div>
+                        <label for="location" class="block mb-1 font-medium">Preferred Location</label>
+                        <input type="text" id="location" class="w-full px-3 py-2 border rounded-md"
+                            placeholder="Enter your preferred cleanup location" required>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Sign
+                        Up as Volunteer</button>
+                </form>
+            </section>
+
+            <!-- Registered Volunteers Section -->
+            <section class="mb-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Registered Volunteers</h3>
+                <ul id="volunteerList" class="space-y-4">
+                    <!-- New volunteer entries will be shown here -->
+                </ul>
+            </section>
+
+            <!-- Location-based Alerts Section -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h3 class="text-xl font-semibold mb-4">Location-based Alerts</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                        <div>
+                            <h4 class="font-semibold">Plastic Waste Reported</h4>
+                            <p class="text-sm text-gray-600">Location: Dhanmondi Lake (2.5 km away)</p>
+                        </div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Respond</button>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-yellow-50 rounded-lg">
+                        <div>
+                            <h4 class="font-semibold">Paper Waste Reported</h4>
+                            <p class="text-sm text-gray-600">Location: Gulshan Park (1.8 km away)</p>
+                        </div>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Respond</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript to handle form submission and show data -->
+    <script>
+        const form = document.getElementById('volunteerForm');
+        const list = document.getElementById('volunteerList');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const location = document.getElementById('location').value;
+
+            const listItem = document.createElement('li');
+            listItem.className = "p-4 border rounded-lg bg-gray-100";
+            listItem.innerHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Preferred Location:</strong> ${location}</p>
+            `;
+
+            list.appendChild(listItem);
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>
